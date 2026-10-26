@@ -35,6 +35,7 @@ def get_f(path):
 
 
 def a_star(start, goal):
+
     frontier = [[start]]
     visited = []
 
@@ -47,6 +48,7 @@ def a_star(start, goal):
             continue
 
         visited.append(node)
+        print("Exploring node:", node)
 
         if node == goal:
             return path
@@ -62,3 +64,5 @@ answer = a_star("Receiving", "Packing Station")
 
 print("Path found by A*:", answer)
 print("Total cost of this path:", get_g(answer))
+
+print("Total nodes explored:", len(visited))
